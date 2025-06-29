@@ -1,48 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import '../styles/Navigation.css';
+"use client"
+
+import type React from "react"
+import { useState, useEffect } from "react"
+import { Menu, X } from "lucide-react"
+import "../styles/Navigation.css"
 
 const Navigation: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'education', 'achievements', 'projects', 'skills', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const sections = ["home", "about", "education", "achievements", "projects", "skills", "contact"]
+      const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
-        const element = document.getElementById(section);
+        const element = document.getElementById(section)
         if (element) {
-          const offsetTop = element.offsetTop;
-          const height = element.offsetHeight;
+          const offsetTop = element.offsetTop
+          const height = element.offsetHeight
 
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-            setActiveSection(section);
-            break;
+            setActiveSection(section)
+            break
           }
         }
       }
-    };
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#education', label: 'Education' },
-    { href: '#achievements', label: 'Achievements' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#contact', label: 'Contact' },
-  ];
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#education", label: "Education" },
+    { href: "#achievements", label: "Achievements" },
+    { href: "#projects", label: "Projects" },
+    { href: "#skills", label: "Skills" },
+    { href: "#contact", label: "Contact" },
+  ]
 
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <a href="#" className="nav-logo">
+        <a href="#home" className="nav-logo">
           Patrick
         </a>
 
@@ -51,17 +54,14 @@ const Navigation: React.FC = () => {
             <a
               key={item.href}
               href={item.href}
-              className={`nav-link ${activeSection === item.href.substring(1) ? 'active' : ''}`}
+              className={`nav-link ${activeSection === item.href.substring(1) ? "active" : ""}`}
             >
               {item.label}
             </a>
           ))}
         </div>
 
-        <button 
-          className="mobile-menu-button" 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+        <button className="mobile-menu-button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -69,19 +69,14 @@ const Navigation: React.FC = () => {
       {mobileMenuOpen && (
         <div className="mobile-menu">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="nav-link"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <a key={item.href} href={item.href} className="nav-link" onClick={() => setMobileMenuOpen(false)}>
               {item.label}
             </a>
           ))}
         </div>
       )}
     </nav>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
