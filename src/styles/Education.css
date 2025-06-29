@@ -1,0 +1,138 @@
+.education-section {
+  min-height: 100vh;
+  padding: 5rem 0;
+  background-color: #f9fafb;
+}
+
+.education-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.education-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.education-slider {
+  max-width: 48rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.education-slide {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 1.5rem;
+}
+
+.education-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.education-image {
+  height: 12rem;
+  background-color: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.education-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.education-card:hover .education-image img {
+  transform: scale(1.05);
+}
+
+.education-content {
+  padding: 1.5rem;
+}
+
+.education-school {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.education-level {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.education-years {
+  color: #374151;
+  font-weight: 600;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  z-index: 10;
+}
+
+.slider-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow.left {
+  left: 1rem;
+}
+
+.slider-arrow.right {
+  right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .slider-arrow {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .slider-arrow.left {
+    left: 0.5rem;
+  }
+
+  .slider-arrow.right {
+    right: 0.5rem;
+  }
+}
