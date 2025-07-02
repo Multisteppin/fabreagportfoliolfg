@@ -46,7 +46,22 @@ const Navigation: React.FC = () => {
     <nav className="navigation">
       <div className="nav-container">
         <a href="#home" className="nav-logo">
-          Patrick
+          <img
+            src="/images/PortLogo.png"
+            alt="Portfolio Logo"
+            className="nav-logo-image"
+            width={50}
+            height={50}
+            onError={(e) => {
+              // Fallback to text if image fails to load
+              const target = e.target as HTMLImageElement
+              target.style.display = "none"
+              const parent = target.parentElement
+              if (parent) {
+                parent.innerHTML = '<span class="nav-logo-text">Patrick</span>'
+              }
+            }}
+          />
         </a>
 
         <div className="nav-links">
