@@ -45,27 +45,31 @@
 .about-social {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
-  gap: 1rem;
+  margin-top: 2rem;
+  gap: 1.5rem;
 }
 
 .social-link {
-  color: #374151;
+  color: #1f2937;
   transition: all 0.3s ease;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f3f4f6;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid #e5e7eb;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .social-link:hover {
-  color: #2563eb;
-  background-color: #eff6ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  background-color: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .about-text-section {

@@ -64,17 +64,31 @@
 .contact-social {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.social-link {
-  color: white;
-  transition: color 0.2s;
+.contact-social .social-link {
+  color: #ffffff;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 4rem;
+  height: 4rem;
+  backdrop-filter: blur(10px);
 }
 
-.social-link:hover {
-  color: #bfdbfe;
+.contact-social .social-link:hover {
+  background-color: #ffffff;
+  color: #2563eb;
+  border-color: #ffffff;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
 .contact-footer {
